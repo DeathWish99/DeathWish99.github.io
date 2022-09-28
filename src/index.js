@@ -1,6 +1,5 @@
 import * as THREE from 'three';
 
-const SCENE = new THREE.Scene();
 const CANVAS = document.querySelector('#canvas');
 const RENDERER = new THREE.WebGLRenderer({CANVAS});
 
@@ -21,6 +20,7 @@ let geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
 
 let material = new THREE.MeshBasicMaterial({color: 0x44aa88});
 let cube = new THREE.Mesh(geometry, material);
+const SCENE = new THREE.Scene();
 
 console.log(cube);
 
