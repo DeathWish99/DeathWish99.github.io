@@ -4,6 +4,8 @@ const SCENE = new THREE.Scene();
 const CANVAS = document.querySelector('#canvas');
 const RENDERER = new THREE.WebGLRenderer({CANVAS});
 
+console.log("we in");
+
 const FOV = 75;
 const ASPECT = 2;
 const NEAR = 0.1;
@@ -19,6 +21,8 @@ let geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
 
 let material = new THREE.MeshBasicMaterial({color: 0x44aa88});
 let cube = new THREE.Mesh(geometry, material);
+
+console.log(cube);
 
 SCENE.add(cube);
 RENDERER.render(SCENE, CAMERA);
