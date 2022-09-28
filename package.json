@@ -1,6 +1,18 @@
 {
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
   "dependencies": {
+    "lodash": "^4.17.21",
     "three": "^0.144.0",
     "webpack": "^5.74.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.10.0"
   }
 }

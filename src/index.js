@@ -1,3 +1,7 @@
+import './style/style.css';
+import _ from 'lodash';
+import * as THREE from 'three';
+
 const SCENE = new THREE.Scene();
 const CANVAS = document.querySelector('.webgl');
 
