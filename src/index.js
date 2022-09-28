@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-const SCENE = THREE.Scene();
+const SCENE = new THREE.Scene();
 const CANVAS = document.querySelector('#canvas');
 const RENDERER = new THREE.WebGLRenderer({CANVAS});
 
