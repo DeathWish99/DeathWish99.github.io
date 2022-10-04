@@ -13,9 +13,32 @@ function main(){
     let boxDepth = 1;
     let geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
     
-    let material = new THREE.MeshBasicMaterial({color: 0x44aa88});
-    let cube = new THREE.Mesh(geometry, material);
+    let material = new THREE.MeshBasicMaterial({
+        vertexColors : true
+    });
+    const positionAttribute = geometry.getAttribute('position');
+    const colors = [];
+    const colorHexCodes = ['#009b48', '#ffffff', '#b71234', '#ffd500', '#0046ad', '#ff5800']
+    const color = new THREE.Color();
+    let colorCount = 0;
+    for (let i = 0; i < positionAttribute.count; i += 4) {
+        color.setStyle(colorHexCodes[colorCount]);
     
+        colors.push(color.r, color.g, color.b);
+        colors.push(color.r, color.g, color.b);
+        colors.push(color.r, color.g, color.b);
+    
+        colors.push(color.r, color.g, color.b);
+        colors.push(color.r, color.g, color.b);
+        colors.push(color.r, color.g, color.b);
+        colorCount += 1;
+    } // for
+  
+    // define the new attribute
+    geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+
+    let cube = new THREE.Mesh(geometry, material);
+
     const renderer = new THREE.WebGLRenderer({
         canvas: canvas
     })
